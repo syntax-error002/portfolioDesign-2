@@ -169,7 +169,7 @@ const Hero = () => {
                         <p className="hero-role">Software Engineer & Designer</p>
                         <div className="availability">
                             <span className="status-dot"></span>
-                            <span>Available for new projects</span>
+                            <span>Inspect my resume & let's work together</span>
                         </div>
                     </div>
                 </div>
