@@ -160,7 +160,7 @@ const Hero = () => {
                     <div className="hero-image-wrapper">
                         <div className="hero-image">
                             <img
-                                src="src/assets/image.png"
+                                src="src/assets/img2.png"
                                 alt="Professional portrait"
                             />
                         </div>
