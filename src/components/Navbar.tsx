@@ -18,6 +18,18 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [mobileMenuOpen]);
+
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
@@ -51,6 +63,11 @@ const Navbar = () => {
                         <span></span>
                         <span></span>
                     </button>
+
+                    {/* Backdrop Overlay */}
+                    {mobileMenuOpen && (
+                        <div className="nav-backdrop" onClick={closeMobileMenu}></div>
+                    )}
 
                     <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                         {isHome ? (
