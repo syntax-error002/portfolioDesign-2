@@ -1,0 +1,577 @@
+.skills {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-xl) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 var(--spacing-md);
+}
+
+.section-header h2 {
+    margin-bottom: var(--spacing-sm);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tools Columns Layout */
+.tools-columns {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* Gradient fade at top and bottom */
+.tools-columns::before,
+.tools-columns::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tools-columns::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--bg-primary), transparent);
+}
+
+.tools-columns::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--bg-primary), transparent);
+}
+
+/* Individual Column */
+.tools-column {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Tools Track */
+.tools-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: max-content;
+}
+
+/* Vertical Scroll Animations */
+.track-down {
+    animation: scrollDown 30s linear infinite;
+}
+
+.track-up {
+    animation: scrollUp 30s linear infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Pause on hover */
+.tools-track:hover {
+    animation-play-state: paused;
+}
+
+/* Tool Item Card */
+.tool-item {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+    min-height: 140px;
+}
+
+/* Animated border gradient */
+.tool-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            transparent,
+            var(--accent-primary),
+            transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tool-item:hover::before {
+    opacity: 1;
+}
+
+/* Glow effect on hover */
+.tool-item::after {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: radial-gradient(circle at center,
+            rgba(0, 255, 136, 0.15) 0%,
+            transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tool-item:hover::after {
+    opacity: 1;
+}
+
+.tool-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(0, 255, 136, 0.2);
+    transform: scale(1.05);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+/* Logo Wrapper */
+.tool-logo-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tool-item:hover .tool-logo-wrapper {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Tool Logo */
+.tool-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(0.3) brightness(0.9);
+    transition: all 0.4s ease;
+}
+
+.tool-item:hover .tool-logo {
+    filter: grayscale(0) brightness(1.1) drop-shadow(0 0 20px rgba(0, 255, 136, 0.3));
+}
+
+/* Fallback Logo */
+.tool-logo-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    border-radius: 0.5rem;
+}
+
+/* Tool Name */
+.tool-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.02em;
+}
+
+.tool-item:hover .tool-name {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* Languages Section */
+.languages-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.languages-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--text-primary);
+}
+
+/* Languages Grid - Two Rows, 5 Columns */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Language Item */
+.language-item {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    aspect-ratio: 1;
+}
+
+/* Animated border gradient */
+.language-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            transparent,
+            var(--accent-primary),
+            transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.language-item:hover::before {
+    opacity: 1;
+}
+
+/* Glow effect on hover */
+.language-item::after {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: radial-gradient(circle at center,
+            rgba(0, 255, 136, 0.15) 0%,
+            transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.language-item:hover::after {
+    opacity: 1;
+}
+
+.language-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(0, 255, 136, 0.2);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+/* Language Logo Wrapper */
+.language-logo-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.language-item:hover .language-logo-wrapper {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Language Logo */
+.language-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(0.3) brightness(0.9);
+    transition: all 0.4s ease;
+}
+
+.language-item:hover .language-logo {
+    filter: grayscale(0) brightness(1.1) drop-shadow(0 0 20px rgba(0, 255, 136, 0.3));
+}
+
+/* Fallback Language Logo */
+.language-logo-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    border-radius: 0.5rem;
+}
+
+/* Language Name */
+.language-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.language-item:hover .language-name {
+    color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tools-columns {
+        gap: 1.25rem;
+        height: 500px;
+    }
+
+    .tools-track {
+        gap: 1.25rem;
+    }
+
+    .tool-item {
+        padding: 1.25rem;
+        min-height: 120px;
+    }
+
+    .tool-logo-wrapper {
+        width: 56px;
+        height: 56px;
+    }
+
+    .track-down,
+    .track-up {
+        animation-duration: 25s;
+    }
+
+    .languages-grid {
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .tools-columns {
+        gap: 1rem;
+        height: 450px;
+    }
+
+    .tools-track {
+        gap: 1rem;
+    }
+
+    .tool-item {
+        padding: 1rem;
+        min-height: 110px;
+        border-radius: 0.875rem;
+    }
+
+    .tool-logo-wrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .tool-name {
+        font-size: 0.8rem;
+    }
+
+    .track-down,
+    .track-up {
+        animation-duration: 20s;
+    }
+
+    .languages-section {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    .languages-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .languages-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .language-item {
+        padding: 1.25rem;
+    }
+
+    .language-logo-wrapper {
+        width: 56px;
+        height: 56px;
+    }
+
+    .language-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .tools-columns {
+        gap: 0.75rem;
+        height: 400px;
+    }
+
+    /* Show only 3 columns on small screens */
+    .tools-column:last-child {
+        display: none;
+    }
+
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-columns {
+        gap: 0.625rem;
+        height: 350px;
+    }
+
+    /* Show only 2 columns on very small screens */
+    .tools-column:nth-child(3) {
+        display: none;
+    }
+
+    .tool-item {
+        padding: 0.875rem;
+        min-height: 100px;
+        gap: 0.75rem;
+    }
+
+    .tool-logo-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tool-name {
+        font-size: 0.75rem;
+    }
+
+    .tool-logo-fallback {
+        font-size: 1.5rem;
+    }
+
+    .track-down,
+    .track-up {
+        animation-duration: 18s;
+    }
+
+    .languages-grid {
+        gap: 0.875rem;
+    }
+
+    .language-item {
+        padding: 1rem;
+    }
+
+    .language-logo-wrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .language-name {
+        font-size: 0.75rem;
+    }
+
+    .language-logo-fallback {
+        font-size: 1.5rem;
+    }
+}
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+    .tools-track {
+        animation: none !important;
+    }
+
+    .tool-item,
+    .tool-logo-wrapper,
+    .tool-logo,
+    .tool-name,
+    .language-item,
+    .language-logo-wrapper,
+    .language-logo,
+    .language-name {
+        transition: none !important;
+    }
+}
