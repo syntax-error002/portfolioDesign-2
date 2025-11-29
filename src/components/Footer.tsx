@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container footer-content">
                 <div className="footer-top">
                     <div className="footer-brand">
-                        <h3 className="gradient-text">{'<DEV/>'}</h3>
+                        <h3 className="gradient-text">{'Shaswat'}</h3>
                         <p>Building the future, one line of code at a time.</p>
                     </div>
 

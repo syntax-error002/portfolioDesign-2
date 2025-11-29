@@ -1,0 +1,219 @@
+.all-projects-page {
+    min-height: 100vh;
+    background: #050505;
+    padding: 8rem 0 4rem;
+    color: #fff;
+}
+
+.all-projects-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header */
+.projects-header {
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.projects-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.projects-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+/* Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* --- CLEAN CARD DESIGN --- */
+.project-card-minimal {
+    display: flex;
+    flex-direction: column;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: border-color 0.3s ease;
+    height: 100%;
+}
+
+.project-card-minimal:hover {
+    border-color: #444;
+}
+
+/* Image Section */
+.card-image {
+    height: 200px;
+    width: 100%;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #222;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.project-card-minimal:hover .card-image img {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* Overlay - Minimal Button */
+.card-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.external-link {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.project-card-minimal:hover .external-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Content Section */
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.project-level {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 0.7rem;
+    color: #333;
+}
+
+.star.filled {
+    color: #fff;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Tech Stack */
+.card-tech {
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tech-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    background: #111;
+    color: #888;
+    border: 1px solid #222;
+    transition: all 0.2s ease;
+}
+
+.project-card-minimal:hover .tech-badge {
+    color: #fff;
+    border-color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .all-projects-page {
+        padding: 6rem 0 3rem;
+    }
+
+    .projects-header {
+        align-items: center;
+        text-align: center;
+        border-bottom: none;
+        margin-bottom: 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .projects-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .external-link {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(255, 255, 255, 0.9);
+    }
+}

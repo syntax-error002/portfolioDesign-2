@@ -213,30 +213,32 @@ const Skills = () => {
                     <h3 className="languages-title">
                         <span className="gradient-text">Languages</span> I Code In
                     </h3>
-                    <div className="languages-grid">
-                        {languages.map((lang) => (
-                            <div
-                                key={lang.name}
-                                className="language-item"
-                            >
-                                <div className="language-logo-wrapper">
-                                    <img
-                                        src={lang.logo}
-                                        alt={lang.name}
-                                        className="language-logo"
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.style.display = 'none';
-                                            const parent = target.parentElement;
-                                            if (parent) {
-                                                parent.innerHTML = `<div class="language-logo-fallback">${lang.name.charAt(0)}</div>`;
-                                            }
-                                        }}
-                                    />
+                    <div className="languages-scroller">
+                        <div className="languages-track">
+                            {[...languages, ...languages, ...languages].map((lang, index) => (
+                                <div
+                                    key={`${lang.name}-${index}`}
+                                    className="language-item"
+                                >
+                                    <div className="language-logo-wrapper">
+                                        <img
+                                            src={lang.logo}
+                                            alt={lang.name}
+                                            className="language-logo"
+                                            onError={(e) => {
+                                                const target = e.target as HTMLImageElement;
+                                                target.style.display = 'none';
+                                                const parent = target.parentElement;
+                                                if (parent) {
+                                                    parent.innerHTML = `<div class="language-logo-fallback">${lang.name.charAt(0)}</div>`;
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                    <span className="language-name">{lang.name}</span>
                                 </div>
-                                <span className="language-name">{lang.name}</span>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

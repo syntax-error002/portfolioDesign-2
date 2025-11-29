@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Collab from './pages/Collab';
+import AllProjects from './pages/AllProjects';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collab" element={<Collab />} />
+            <Route path="/all-projects" element={<AllProjects />} />
           </Routes>
         </main>
         <Footer />
