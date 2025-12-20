@@ -256,14 +256,14 @@ export const projectsData: Project[] = [
         level: 3,
         link: "https://github.com/syntax-error002/gyaniBaba"
     },
-    {
-        name: "LLM CLI Tool",
-        oneLiner: "Access large language models from the command-line",
-        description: "Access large language models from the command-line",
-        toolsUsed: ["Python", "CLI", "AI"],
-        level: 4,
-        link: "https://github.com/syntax-error002/llm"
-    },
+    // {
+    //     name: "LLM CLI Tool",
+    //     oneLiner: "Access large language models from the command-line",
+    //     description: "Access large language models from the command-line",
+    //     toolsUsed: ["Python", "CLI", "AI"],
+    //     level: 4,
+    //     link: "https://github.com/syntax-error002/llm"
+    // },
     {
         name: "Creative Space",
         oneLiner: "Personal creative space.",
@@ -288,30 +288,30 @@ export const projectsData: Project[] = [
         level: 2,
         link: "https://github.com/syntax-error002/mainDart"
     },
-    {
-        name: "Repo Template",
-        oneLiner: "New repository template.",
-        description: "New repository template.",
-        toolsUsed: ["JavaScript"],
-        level: 2,
-        link: "https://github.com/syntax-error002/your-new-repo1"
-    },
-    {
-        name: "Final Test",
-        oneLiner: "Final test repository.",
-        description: "Final test repository.",
-        toolsUsed: ["Test"],
-        level: 1,
-        link: "https://github.com/syntax-error002/testfinal"
-    },
-    {
-        name: "Test 122",
-        oneLiner: "Test repository 122.",
-        description: "Test repository 122.",
-        toolsUsed: ["Test"],
-        level: 1,
-        link: "https://github.com/syntax-error002/test122"
-    },
+    // {
+    //     name: "Repo Template",
+    //     oneLiner: "New repository template.",
+    //     description: "New repository template.",
+    //     toolsUsed: ["JavaScript"],
+    //     level: 2,
+    //     link: "https://github.com/syntax-error002/your-new-repo1"
+    // },
+    // {
+    //     name: "Final Test",
+    //     oneLiner: "Final test repository.",
+    //     description: "Final test repository.",
+    //     toolsUsed: ["Test"],
+    //     level: 1,
+    //     link: "https://github.com/syntax-error002/testfinal"
+    // },
+    // {
+    //     name: "Test 122",
+    //     oneLiner: "Test repository 122.",
+    //     description: "Test repository 122.",
+    //     toolsUsed: ["Test"],
+    //     level: 1,
+    //     link: "https://github.com/syntax-error002/test122"
+    // },
     {
         name: "Reva Fest Animations",
         oneLiner: "Animations for Reva Fest.",
@@ -384,12 +384,12 @@ export const projectsData: Project[] = [
         level: 3,
         link: "https://github.com/syntax-error002/Image-gallery"
     },
-    {
-        name: "CSS Testing",
-        oneLiner: "Testing repository.",
-        description: "Testing repository.",
-        toolsUsed: ["CSS"],
-        level: 1,
-        link: "https://github.com/syntax-error002/testing"
-    }
+    // {
+    //     name: "CSS Testing",
+    //     oneLiner: "Testing repository.",
+    //     description: "Testing repository.",
+    //     toolsUsed: ["CSS"],
+    //     level: 1,
+    //     link: "https://github.com/syntax-error002/testing"
+    // }
 ];
