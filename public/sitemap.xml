@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shaswatkureel.com/</loc>
+    <loc>https://shaswatkureel.vercel.app/</loc>
     <lastmod>2025-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://shaswatkureel.com/all-projects</loc>
+    <loc>https://shaswatkureel.vercel.app/all-projects</loc>
     <lastmod>2025-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shaswatkureel.com/collab</loc>
+    <loc>https://shaswatkureel.vercel.app/collab</loc>
     <lastmod>2025-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -15,6 +15,7 @@ function App() {
       <div className="app">
         <Navbar />
         <main>
+          <h1 className="visually-hidden">Shaswat Kureel - Freelance Software Engineer Portfolio</h1>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collab" element={<Collab />} />
