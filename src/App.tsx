@@ -4,11 +4,14 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Collab from './pages/Collab';
 import AllProjects from './pages/AllProjects';
+import Background3D from './components/Background3D';
+import ChatbotWidget from './components/ChatbotWidget';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <Background3D />
       <div className="app">
         <Navbar />
         <main>
@@ -19,6 +22,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <ChatbotWidget />
       </div>
     </Router>
   );

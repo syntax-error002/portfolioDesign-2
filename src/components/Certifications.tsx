@@ -11,29 +11,36 @@ interface Certification {
 
 const certifications: Certification[] = [
     {
+        title: 'Best Student Award of the year 2024',
+        issuer: 'UPL University / Honors',
+        date: '2024',
+        credentialLink: '#',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Gold_Medal_Icon.svg'
+    },
+    {
+        title: 'Technocrats Hackathon - Grand Finalist',
+        issuer: 'Technocrats',
+        date: '2025',
+        credentialLink: '#',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg'
+    },
+    {
         title: 'Controllers Job Simulation',
         issuer: 'Goldman Sachs',
-        date: 'Nov 2025',
+        date: 'Nov 2023',
         credentialLink: '#',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Goldman_Sachs.svg'
     },
     {
         title: 'Data Analytics Job Simulation',
-        issuer: 'Deloitte',
-        date: 'Nov 2025',
+        issuer: 'Deloitte Australia',
+        date: '2023',
         credentialLink: '#',
         logo: 'https://th.bing.com/th/id/OIP.o19BG46ZQEO95vgH4HMz5gHaHa?w=170&h=180&c=7&r=0&o=7&pid=1.7&rm=3'
     },
     {
-        title: 'AWS Fundamentals',
-        issuer: 'Coursera',
-        date: '2024',
-        credentialLink: '#',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg'
-    },
-    {
-        title: 'Google UX Design Professional',
-        issuer: 'Coursera',
+        title: 'Create a Lead Generation Messenger Chatbot',
+        issuer: 'Chatfuel / Coursera',
         date: '2023',
         credentialLink: '#',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Coursera-Logo_600x600.svg'
@@ -59,7 +66,7 @@ const Certifications = () => {
         <section className="section certifications" id="certifications">
             <div className="container">
                 <div className="section-header">
-                    <h2><span className="gradient-text">Certifications</span> & Badges</h2>
+                    <h2><span className="accent-text">Certifications</span> & Badges</h2>
                     <p>Professional qualifications and milestones achieved</p>
                 </div>
 
@@ -94,7 +101,7 @@ const Certifications = () => {
                 </div>
 
                 <div className="cert-gallery-header">
-                    <h3>Verified <span className="gradient-text">Credentials</span></h3>
+                    <h3>Verified <span className="accent-text">Credentials</span></h3>
                 </div>
 
                 <div className="cert-gallery">

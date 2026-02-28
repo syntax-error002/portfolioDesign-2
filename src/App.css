@@ -3,14 +3,13 @@
   display: flex;
   flex-direction: column;
 
-  --color-bg: #050505;
-  --color-accent: #EB141E;
-  --color-text: #FFFFFF;
-  --color-glass-border: rgba(255, 255, 255, 0.1);
-  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-bg: #000000;
+  --color-accent: #00ffaa;
+  --color-text: #ffffff;
+  --color-glass-border: rgba(0, 255, 170, 0.1);
+  --color-glass-bg: rgba(10, 10, 10, 0.8);
 }
 
 main {
   flex: 1;
-  padding-top: 80px;
 }

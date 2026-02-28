@@ -105,7 +105,7 @@ const QuickConnectModal = ({ isOpen, onClose }: QuickConnectModalProps) => {
                 </button>
 
                 <div className="modal-header">
-                    <h2>Quick <span className="gradient-text">Connect</span></h2>
+                    <h2>Quick <span className="accent-text">Connect</span></h2>
                     <p>Send me a quick message and I'll get back to you soon!</p>
                 </div>
 

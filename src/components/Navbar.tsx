@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Github, Twitter, Linkedin, Zap } from 'lucide-react';
 import './Navbar.css';
-import './HireMeButton.css';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -50,8 +50,11 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <div className="navbar-content">
-                    <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        <span className="gradient-text">{'</>'}</span>
+                    <Link to="/" className="logo-container" onClick={closeMobileMenu}>
+                        <div className="logo-icon">
+                            <Zap size={16} color="#00ffaa" fill="#00ffaa" />
+                        </div>
+                        <span className="logo-text">SHCODE</span>
                     </Link>
 
                     <button
@@ -72,24 +75,40 @@ const Navbar = () => {
                     <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                         {isHome ? (
                             <>
-                                <a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a>
-                                <a href="#skills" onClick={() => scrollToSection('skills')}>Skills</a>
-                                <a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a>
+                                <a href="#home" className="active-link" onClick={() => scrollToSection('home')}>
+                                    <span className="bracket">&gt;</span> HOME
+                                </a>
+                                <a href="#projects" onClick={() => scrollToSection('projects')}>PROJECTS</a>
+                                <a href="#skills" onClick={() => scrollToSection('skills')}>WORKBENCH</a>
+                                <a href="#blog" onClick={() => scrollToSection('blog')}>BLOG</a>
                             </>
                         ) : (
                             <>
-                                <Link to="/" onClick={closeMobileMenu}>Home</Link>
-                                <Link to="/#projects" onClick={closeMobileMenu}>Projects</Link>
-                                <Link to="/#skills" onClick={closeMobileMenu}>Skills</Link>
+                                <Link to="/" onClick={closeMobileMenu}>HOME</Link>
+                                <Link to="/#projects" onClick={closeMobileMenu}>PROJECTS</Link>
+                                <Link to="/#skills" onClick={closeMobileMenu}>WORKBENCH</Link>
+                                <Link to="/#blog" onClick={closeMobileMenu}>BLOG</Link>
                             </>
                         )}
-                        <Link to="/collab" className="btn btn-primary btn-small hire-me-btn" onClick={closeMobileMenu}>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                            </svg>
-                            <span>Hire Me</span>
-                        </Link>
+                    </div>
+
+                    <div className="nav-right">
+                        <div className="nav-socials">
+                            <a href="https://github.com/syntax-error002" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <Github size={16} />
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <Twitter size={16} />
+                            </a>
+                            <a href="https://in.linkedin.com/in/shaswatkureel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <Linkedin size={16} />
+                            </a>
+                        </div>
+
+                        <div className="status-badge">
+                            <span className="status-dot"></span>
+                            status: building
+                        </div>
                     </div>
                 </div>
             </div>

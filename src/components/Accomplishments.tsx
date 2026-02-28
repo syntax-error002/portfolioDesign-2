@@ -14,7 +14,7 @@ const Accomplishments = () => {
         <section className="section accomplishments" id="accomplishments">
             <div className="container">
                 <div className="section-header">
-                    <h2><span className="gradient-text">Impact</span> & Milestones</h2>
+                    <h2><span className="accent-text">Impact</span> & Milestones</h2>
                 </div>
 
                 <div className="bento-grid">

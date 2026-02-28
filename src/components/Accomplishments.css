@@ -3,21 +3,13 @@
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
-/* Subtle Background Glow */
-.accomplishments::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
-    filter: blur(80px);
-    z-index: 0;
-    pointer-events: none;
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .bento-grid {
@@ -33,31 +25,30 @@
 
 /* Base Bento Item - Clean & Premium */
 .bento-item {
-    background: rgba(15, 15, 20, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.5rem;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
     padding: 1.75rem;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(12px);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
 }
 
 /* Hover Effect - Subtle Lift */
 .bento-item:hover {
-    transform: translateY(-5px);
-    background: rgba(20, 20, 25, 0.8);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    background: rgba(15, 15, 15, 0.9);
+    border-color: rgba(0, 255, 170, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 255, 170, 0.05);
 }
 
 /* Grid Spans */
 .bento-hero {
     grid-column: span 2;
     grid-row: span 2;
-    background: linear-gradient(145deg, rgba(20, 20, 30, 0.8), rgba(10, 10, 15, 0.9));
+    background: rgba(12, 12, 12, 0.9);
 }
 
 .bento-tall {
@@ -75,26 +66,25 @@
 }
 
 .bento-icon {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    width: 48px;
-    height: 48px;
+    background: rgba(0, 255, 170, 0.05);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+    color: var(--accent-primary);
 }
 
 .bento-stat {
-    font-size: 4.5rem;
+    font-family: var(--font-display);
+    font-size: 4rem;
     font-weight: 800;
     line-height: 1;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
     margin: 0.5rem 0 1rem;
     letter-spacing: -2px;
 }
@@ -122,24 +112,24 @@
 }
 
 .bento-tags span {
-    background: rgba(0, 255, 136, 0.1);
+    background: transparent;
     color: var(--accent-primary);
-    padding: 0.4rem 0.8rem;
-    border-radius: 2rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
     font-weight: 600;
-    border: 1px solid rgba(0, 255, 136, 0.2);
+    border: 1px solid var(--accent-primary);
 }
 
 .bento-chip {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
     padding: 0.4rem 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    color: #fff;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
     margin-top: auto;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Hackathon Stack */
@@ -152,12 +142,13 @@
 }
 
 .hackathon-stack span {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.03);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: transparent;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
 }
 
 /* Lists */
@@ -173,19 +164,19 @@
 
 .bento-list li {
     padding-left: 1rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid var(--accent-primary);
 }
 
 .bento-list strong {
-    color: #fff;
+    color: var(--text-primary);
     display: block;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 0.25rem;
 }
 
 .bento-list span {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 /* Exam Badges */
@@ -197,11 +188,11 @@
 }
 
 .exam-badge {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
     padding: 0.4rem 0.8rem;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
     color: var(--text-secondary);
 }
 
@@ -209,7 +200,7 @@
 .bento-footer {
     margin-top: auto;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
@@ -219,7 +210,8 @@
     align-items: center;
     gap: 0.5rem;
     color: var(--accent-primary);
-    font-weight: 600;
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
 }
 
 .blink {
@@ -233,7 +225,7 @@
     }
 
     50% {
-        opacity: 0.4;
+        opacity: 0.2;
     }
 
     100% {
@@ -266,7 +258,7 @@
     }
 
     .bento-stat {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     .bento-hero,
