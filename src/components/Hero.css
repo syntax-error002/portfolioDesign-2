@@ -32,6 +32,17 @@
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
+.hero-name-label {
+    display: block;
+    font-size: 0.35em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
 .accent-text {
     color: var(--accent-primary);
 }
